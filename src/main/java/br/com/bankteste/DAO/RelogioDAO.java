@@ -7,9 +7,19 @@ import br.com.bankteste.entity.Relogio;
 import br.com.bankteste.entitymanager.JpaEntityManager;
 
 public class RelogioDAO {
+	
+	/** The jpaem. */
 	private JpaEntityManager JPAEM = new JpaEntityManager();
+	
+	/** The obj EM. */
 	private EntityManager objEM = JPAEM.getEntityManager(); 
 	
+	/**
+	 * Buscar.
+	 *
+	 * @param relogio the relogio
+	 * @return the relogio
+	 */
 	public Relogio buscar(Relogio relogio) {
 		try {
 			
@@ -20,6 +30,13 @@ public class RelogioDAO {
 			throw new WebApplicationException(500);
 			 }
 	}
+	
+	/**
+	 * Criar relogio.
+	 *
+	 * @param relogio the relogio
+	 * @return the relogio
+	 */
 	public Relogio criarRelogio(Relogio relogio) {
 		try {  
 			JPAEM = new JpaEntityManager();

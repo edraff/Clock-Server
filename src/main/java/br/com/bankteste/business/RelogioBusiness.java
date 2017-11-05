@@ -1,11 +1,13 @@
 package br.com.bankteste.business;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
 
 import br.com.bankteste.DAO.RelogioDAO;
 import br.com.bankteste.entity.Relogio;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RelogioBusiness.
+ */
 public class RelogioBusiness {
 
 	/** The relogio DAO. */
@@ -29,6 +31,11 @@ public class RelogioBusiness {
 		return relogioRetorno;
 	}
 	
+	/**
+	 * Calcula angulo.
+	 *
+	 * @param relogio the relogio
+	 */
 	private void calculaAngulo(Relogio relogio) {
 		
 		int resultado = Math.abs(calculaAnguloH(relogio.getIdentificador()
@@ -39,10 +46,22 @@ public class RelogioBusiness {
 		relogio.setAngulo(resultado);
 	}
 	
+	/**
+	 * Calcula angulo H.
+	 *
+	 * @param horas the horas
+	 * @return the int
+	 */
 	private int calculaAnguloH(int horas) {
 		return (horas%12)*30;
 	}
 	
+	/**
+	 * Calcula angulo M.
+	 *
+	 * @param minutos the minutos
+	 * @return the int
+	 */
 	private int calculaAnguloM(int minutos) {
 		return (minutos%60)*6;
 	}
