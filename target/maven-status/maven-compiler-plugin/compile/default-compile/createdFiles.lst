@@ -1,0 +1,8 @@
+br\com\bankteste\Convert\RelogioConvert.class
+br\com\bankteste\DAO\RelogioDAO.class
+br\com\bankteste\entity\RelogioPK.class
+br\com\bankteste\service\RelogioService.class
+br\com\bankteste\business\RelogioBusiness.class
+br\com\bankteste\Facade\RelogioFacade.class
+br\com\bankteste\entity\Relogio.class
+br\com\bankteste\entitymanager\JpaEntityManager.class
