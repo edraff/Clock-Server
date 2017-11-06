@@ -2,24 +2,28 @@
  
      $scope.relogio = {
             hora : "",
-            minuto : ""
+            minuto : "",
+            txtResultado: ""
      };
  
      $scope.calcularAngulo = function() {
-            if ($scope.relogio.hora>24) {
-                   alert("Valor incorreto no campo Hora!");
-                   return;
+            if ($scope.relogio.hora < 0 && $scope.relogio.hora > 24) {
+                alert("Valor incorreto no campo Hora!");
+                return;
             }
-			  if ($scope.relogio.minuto>60) {
-                   alert("Valor incorreto no campo minuto!");
-                   return;
+			else if ($scope.relogio.minuto < 0 && $scope.relogio.minuto > 60) {
+                alert("Valor incorreto no campo minuto!");
+                return;
+            }			
+            else{
+                $http.get('apirest/clock/'+ $scope.relogio.hora +'/'+$scope.relogio.minuto).
+                 then(
+                    function(response) {
+                        if(response.data){                                                  
+                            $scope.relogio.txtResultado = response.data.angulo;                        
+                        }
+                    
+                });
             }
-			
-            $http.get('apirest/clock/'+ $scope.relogio.hora +'/'+$scope.relogio.minuto).success(function(data) {
-                   console.log(data);
- 
-			  $("#modal-validacao").modal("show");
-              $scope.txtModal = data.angulo;
-            });
      }
  });
