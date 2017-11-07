@@ -7,11 +7,11 @@
      };
  
      $scope.calcularAngulo = function() {
-            if ($scope.relogio.hora < 0 && $scope.relogio.hora > 24) {
+            if ($scope.relogio.hora < 0 || $scope.relogio.hora > 24) {
                 alert("Valor incorreto no campo Hora!");
                 return;
             }
-			else if ($scope.relogio.minuto < 0 && $scope.relogio.minuto > 60) {
+			else if ($scope.relogio.minuto < 0 || $scope.relogio.minuto > 60) {
                 alert("Valor incorreto no campo minuto!");
                 return;
             }			
